@@ -30,7 +30,7 @@ body {
 .header__top {
   background-color: #303030;
 }
-.header_btn {
+.header__btn {
   float: right;
   line-height: 36px;
   color: #1b1b1b;
@@ -40,7 +40,7 @@ body {
   display: block;
   position: relative;
 }
-.header_btn::before {
+.header__btn::before {
   font-family: "icomoon";
   content: "\f0b1";
   position: absolute;
@@ -108,24 +108,26 @@ body {
   display: none;
 }
 .slider {
-  background-image: url(../img/slider-fone.jpg);
+  background-image: url(../img/about-fon.jpg);
+
   background-repeat: no-repeat;
-  box-sizing: cover;
+  background-size: cover;
   background-position: center;
   min-height: 500px;
 }
-.slider__item {
+.slider__item-content {
   text-align: center;
   padding-top: 110px;
-  min-width: 665px;
+  max-width: 665px;
+  margin: 0 auto;
 }
 .slider__title {
   text-transform: uppercase;
-  font-style: 30px;
-  list-style: 36px;
+  font-size: 30px;
+  line-height: 36px;
   color: #fff;
   font-weight: 500;
-  letter-spacing: 1.5;
+  letter-spacing: 1.5px;
   margin-bottom: 22px;
   font-family: "Roboto", sans-serif;
 }
@@ -149,14 +151,13 @@ body {
   z-index: 2;
   outline: none;
 }
-.default-btn::after {
-  font-family: "icomoon";
+.default-btn:after {
   content: "\f105";
+  font-family: "icomoon";
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   right: -12px;
-  /* cursor: pointer; */
 }
 .slider__inner {
   position: relative;
@@ -167,19 +168,18 @@ body {
   z-index: 3;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
   border: 1px solid #fff;
-  background-color: transparent;
   cursor: pointer;
   outline: none;
   background-color: #ffc222;
-  transition: all 0.7s;
+  border-radius: 50%;
+  transition: all 0.3s;
 }
 .slick-btn.slick-disabled {
   cursor: default;
   background-color: transparent;
 }
-.slick-btn::before {
+.slick-btn:before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -187,10 +187,10 @@ body {
   font-family: "icomoon";
   color: #fff;
 }
-.slick-next::before {
+.slick-next:before {
   content: "\f105";
 }
-.slick-prev::before {
+.slick-prev:before {
   content: "\f104";
 }
 .slick-next {
@@ -599,14 +599,19 @@ body {
   display: flex;
   justify-content: space-between;
 }
-.footer__inner .header_btn {
+.footer__inner .header__btn {
   float: none;
   display: inline-block;
 }
 .footer__map {
   padding-top: 10px;
   max-width: 630px;
+  width: 100%;
 }
+.footer__map iframe {
+  width: 100%;
+}
+
 .footer__info {
   max-width: 360px;
 }
@@ -654,4 +659,25 @@ body {
   font-family: "icomoon";
   content: "\f041";
   left: 3px;
+}
+#modal {
+  width: 300px;
+}
+#modal input {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  outline: none;
+  height: 40px;
+  border: 1px solid #e6e6e6;
+  padding: 0px 10px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+#modal input[type="submit"] {
+  background-color: #ffc222;
+  border: none;
+}
+.header__btn-menu {
+  display: none;
 }
